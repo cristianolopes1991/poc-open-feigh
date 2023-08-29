@@ -5,14 +5,17 @@ import org.springframework.stereotype.Service;
 import pocopenfeigh.webclient.CharacterClient;
 import pocopenfeigh.webclient.dto.CharacterDTO;
 
+import java.util.concurrent.CompletableFuture;
+
 @Service
 public class CharacterService {
 
     @Autowired
     private CharacterClient characterClient;
 
-    public CharacterDTO getCharacter() {
-        return characterClient.getAllCharacter();
+    public CompletableFuture<CharacterDTO> getCharacter() {
+
+        return CompletableFuture.completedFuture(characterClient.getAllCharacter());
     }
 
 

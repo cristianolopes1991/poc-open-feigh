@@ -21,8 +21,13 @@ public class RickAndMortyController {
     @GetMapping
     public ResponseEntity<LocationData> getAllInfosRickAndMorty(@RequestParam Map<String, String> params) {
         var response = service.getCharacter();
-        var responseLocation = locationService.getAllLocation();
 
+        var startTime = System.currentTimeMillis();
+        var responseLocation = locationService.getAllLocation();
+        var endTime = System.currentTimeMillis();
+
+        final float secFinal = (endTime - startTime) / 1000F;
+        System.out.println("Total: " + secFinal);
         return ResponseEntity.of(java.util.Optional.ofNullable(responseLocation));
     }
 }
