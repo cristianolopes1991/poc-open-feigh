@@ -11,8 +11,12 @@ import java.util.Set;
 @AllArgsConstructor
 @NoArgsConstructor
 @Builder(toBuilder = true)
-public class CharacterDTO {
+public class ResponseResultLocationDTO {
 
-    private InfoDTO info;
-    private Set<ResultDTO> results;
+    private Integer id;
+    private String name;
+    private String dimension;
+    private Set<String> residents;
+    private String url;
+    private String created;
 }

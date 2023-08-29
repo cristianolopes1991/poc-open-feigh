@@ -5,14 +5,11 @@ import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
-import java.util.Set;
-
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
 @Builder(toBuilder = true)
-public class CharacterDTO {
-
-    private InfoDTO info;
-    private Set<ResultDTO> results;
+public class LocationDTO {
+    private String name;
+    private String url;
 }
